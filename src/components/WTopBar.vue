@@ -19,7 +19,7 @@ export default class WTopBar extends Vue {
   @Prop()
   private name!: string;
 
-  @Prop({default: false})
+  @Prop({ default: false })
   private inDetailPage!: boolean;
 }
 </script>
