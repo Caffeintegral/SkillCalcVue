@@ -60,6 +60,7 @@ export default class WSkillPage extends Vue {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 52px;
 
   .upper-selector {
     width: 100%;

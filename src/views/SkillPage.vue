@@ -1,15 +1,21 @@
 <template>
-  <w-skill-page
-    :countries="countries"
-    :selectedCountry="selectedCountry"
-    @setCountry="selectedCountry = $event; selectedShip = selectableShips.length > 0 ? selectableShips[0] : null;"
-    :shipTypes="shipTypes"
-    :selectedShipType="selectedShipType"
-    @setShipType="selectedShipType = $event; selectedShip = selectableShips.length > 0 ? selectableShips[0] : null;"
-    :selectableShips="selectableShips"
-    :selectedShip="selectedShip"
-    @setShip="selectedShip = $event"
-  />
+  <div class="skill-page">
+    <w-top-bar
+      name="title" 
+      :inDetailPage="false"
+    />
+    <w-skill-page
+      :countries="countries"
+      :selectedCountry="selectedCountry"
+      @setCountry="selectedCountry = $event; selectedShip = selectableShips.length > 0 ? selectableShips[0] : null;"
+      :shipTypes="shipTypes"
+      :selectedShipType="selectedShipType"
+      @setShipType="selectedShipType = $event; selectedShip = selectableShips.length > 0 ? selectableShips[0] : null;"
+      :selectableShips="selectableShips"
+      :selectedShip="selectedShip"
+      @setShip="selectedShip = $event"
+    />
+  </div>
 </template>
 
 <script lang="ts">
@@ -21,10 +27,12 @@ import countries from '@/datas/countries';
 import shipTypes from '@/datas/shipTypes';
 import shipDatas from '@/datas/shipDatas';
 import ShipType from '@/models/ShipType';
+import WTopBar from '@/components/WTopBar.vue';
 
 @Component({
   components: {
     WSkillPage,
+    WTopBar,
   },
 })
 export default class SkillPage extends Vue {
