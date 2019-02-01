@@ -1,8 +1,7 @@
 <template>
   <div class="skill-page">
     <w-top-bar
-      name="title" 
-      :inDetailPage="false"
+      name="title"
     />
     <w-skill-page
       :countries="countries"
