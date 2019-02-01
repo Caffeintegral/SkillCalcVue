@@ -13,9 +13,10 @@ export default new Router({
       component: SkillPage,
     },
     {
-      path: '/detail',
+      path: '/detail/:name',
       name: 'detail',
       component: DetailPage,
+      props: true,
     },
   ],
 });
