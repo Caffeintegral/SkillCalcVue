@@ -22,7 +22,7 @@ import ShipType from '@/models/ShipType';
   },
 })
 export default class WSelectShip extends Vue {
-  @Prop({default: []})
+  @Prop({ default: [] })
   private selectableShips!: ShipType[];
 
   private swiperOption = {
