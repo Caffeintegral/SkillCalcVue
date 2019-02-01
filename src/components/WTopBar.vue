@@ -2,7 +2,7 @@
   <div class="w-top-bar">
     <div class="name-space">
       <div class="back-button">
-      <div v-if="inDetailPage">
+      <div v-if="inDetailPage" @click="$router.go(-1)">
         戻る
       </div>
     </div>
