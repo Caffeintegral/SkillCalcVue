@@ -7,7 +7,7 @@
   <div class="bottom-selector">
     <w-select-ship :selectableShips="selectableShips" @setShip="$emit('setShip', $event)"/>
   </div>
-  <div class="next-button" :disabled="!selectedShip">
+  <div class="next-button" :disabled="!selectedShip" @click="$emit('goDetail')">
     <div v-if="selectedShip">
       {{selectedShip.name}}>
     </div>

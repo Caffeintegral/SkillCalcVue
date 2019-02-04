@@ -13,6 +13,7 @@
       :selectableShips="selectableShips"
       :selectedShip="selectedShip"
       @setShip="selectedShip = $event"
+      @goDetail="goDetailPage"
     />
   </div>
 </template>
@@ -51,6 +52,10 @@ export default class SkillPage extends Vue {
     });
     // this.selectableShips.length > 0 trueなら　this.selectableShips[0]　false なら　null
     return result;
+  }
+
+  public goDetailPage() {
+    this.$router.push(`/detail/${this.selectedShip!.name}`);
   }
 }
 </script>
