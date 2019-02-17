@@ -4,6 +4,9 @@
     :name="name" 
     :inDetailPage="true"
   />
+  <w-detail-page 
+    :shipData="shipData"
+  />
 </div>
 </template>
 
