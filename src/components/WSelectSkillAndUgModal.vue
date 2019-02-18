@@ -4,7 +4,14 @@
     <div class="modal">
       <swiper ref="swiper" @slideChangeTransitionEnd="updateSkillAndUg" :options="swiperOption">
         <swiper-slide v-for="(test, index) in testDatas" :key="index">
-          <div class="content" style="padding-bottom: 1.5em;">{{test}}</div>
+          <div class="content" style="padding-bottom: 1.5em;">{{test}}
+            <div v-if="index==0">
+              <w-select-skill-modal-swiper/>
+            </div>
+            <div v-if="index==1">
+              <w-select-ug-modal-swiper/>
+            </div>
+          </div>
         </swiper-slide>
         <div class="swiper-pagination" slot="pagination"/>
       </swiper>
@@ -17,14 +24,19 @@ import { Vue, Component, Prop, Watch } from 'vue-property-decorator';
 import 'swiper/dist/css/swiper.css';
 import { swiper, swiperSlide } from 'vue-awesome-swiper';
 
+import WSelectSkillModalSwiper from '@/components/WSelectSkillModalSwiper.vue';
+import WSelectUgModalSwiper from '@/components/WSelectUgModalSwiper.vue';
+
 @Component({
   components: {
     swiper,
     swiperSlide,
+    WSelectSkillModalSwiper,
+    WSelectUgModalSwiper,
   },
 })
 export default class WSelectSkillAndUgModal extends Vue {
-  private testDatas: string[] = ['3', '4'];
+  private testDatas: string[] = ['0', '1'];
 
    private swiperOption = {
     slidesPerView: 2,
