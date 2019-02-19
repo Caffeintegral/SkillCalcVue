@@ -7,6 +7,8 @@
       v-if="isModalOpened" 
       @close="isModalOpened = false"
       :ugData="ugData"
+      :skillData="skillData"
+      :flagData="flagData"
     />
 
   </div>
@@ -26,6 +28,12 @@ export default class WSelectSkillAndUg extends Vue {
   private isModalOpened: boolean = false;
   @Prop()
   private ugData!: SkillUgType[];
+
+  @Prop()
+  private skillData!: SkillUgType[];
+
+  @Prop()
+  private flagData!: SkillUgType[];
 }
 
 </script>

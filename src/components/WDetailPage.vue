@@ -3,9 +3,11 @@
     <w-select-skill-and-ug 
       :shipData="shipData"
       :ugData="ugData"
+      :skillData="skillData"
+      :flagData="flagData"
     />
-    <!-- <div>{{shipData}}</div>
-    <div>{{ug}}</div> -->
+    <!-- <div>{{shipData}}</div> -->
+    <!-- <div>{{skillData}}</div> -->
   </div>
 </template>
 
@@ -15,6 +17,7 @@ import WSelectSkillAndUg from '@/components/WSelectSkillAndUg.vue';
 import ShipType from '@/models/ShipType';
 import SkillUgType from '@/models/SkillUgType';
 import ugDatas from '@/datas/ugData';
+import SkillPage from '@/views/SkillPage.vue';
 
 @Component({
   components: {
@@ -29,6 +32,12 @@ export default class WDetailPage extends Vue {
 
   @Prop()
   private ugData!: SkillUgType[];
+
+  @Prop()
+  private skillData!: SkillUgType[];
+
+  @Prop()
+  private flagData!: SkillUgType[];
 
   public created() {
     this.ug = this.ugData.filter((ug) => {

@@ -7,6 +7,8 @@
   <w-detail-page 
     :shipData="shipData"
     :ugData="ugData"
+    :skillData="skillData"
+    :flagData="flagData"
   />
 </div>
 </template>
@@ -18,6 +20,7 @@ import SkillUgType from '@/models/SkillUgType';
 import shipDatas from '@/datas/shipDatas';
 import ugDatas from '@/datas/ugData';
 import skillDatas from '@/datas/skillData';
+import flagDatas from '@/datas/flagDatas';
 import WDetailPage from '@/components/WDetailPage.vue';
 import WTopBar from '@/components/WTopBar.vue';
 
@@ -31,6 +34,7 @@ export default class DetailPage extends Vue {
   private shipData: ShipType | null = null;
   private ugData: SkillUgType[] = ugDatas;
   private skillData: SkillUgType[] = skillDatas;
+  private flagData: SkillUgType[] = flagDatas;
   @Prop()
   private name!: string;
 

@@ -6,11 +6,18 @@
         <swiper-slide v-for="(test, index) in testDatas" :key="index">
           <div class="content" style="padding-bottom: 1.5em;">
             <div v-if="index==0">
-              <w-select-skill-modal-swiper/>
+              <w-select-skill-modal-swiper
+                :skillData="skillData"
+              />
             </div>
             <div v-if="index==1">
               <w-select-ug-modal-swiper
                 :ugData="ugData"
+              />
+            </div>
+            <div v-if="index==2">
+              <w-select-flag-modal-swiper
+                :flagData="flagData"
               />
             </div>
           </div>
@@ -28,6 +35,7 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper';
 
 import WSelectSkillModalSwiper from '@/components/WSelectSkillModalSwiper.vue';
 import WSelectUgModalSwiper from '@/components/WSelectUgModalSwiper.vue';
+import WSelectFlagModalSwiper from '@/components/WSelectFlagModalSwiper.vue';
 import SkillUgType from '@/models/SkillUgType';
 
 @Component({
@@ -36,13 +44,15 @@ import SkillUgType from '@/models/SkillUgType';
     swiperSlide,
     WSelectSkillModalSwiper,
     WSelectUgModalSwiper,
+    WSelectFlagModalSwiper,
   },
 })
 export default class WSelectSkillAndUgModal extends Vue {
-  private testDatas: string[] = ['0', '1'];
+  private testDatas: number[] = [0, 1, 2];
 
    private swiperOption = {
-    slidesPerView: 2,
+    //  height: 800
+    slidesPerView: 1,
     spaceBetween: 60,
     centeredSlides: true,
     pagination: {
@@ -53,6 +63,12 @@ export default class WSelectSkillAndUgModal extends Vue {
 
   @Prop()
   private ugData!: SkillUgType[];
+
+  @Prop()
+  private skillData!: SkillUgType[];
+
+  @Prop()
+  private flagData!: SkillUgType[];
 
   get swiper() {
     // @ts-ignore

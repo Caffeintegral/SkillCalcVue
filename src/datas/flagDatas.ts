@@ -2,37 +2,37 @@ import SkillUgType from '@/models/SkillUgType';
 
 const ugDatas: SkillUgType[] = [
     {
-        name: '主兵装改良1',
+        name: '迷彩',
         flag: false,
         description: '',
     },
     {
-        name: '副兵装改良1',
+        name: 'November Echo Setteseven',
         flag: false,
         description: '',
     },
     {
-        name: '弾薬庫改良1',
+        name: 'Mike Yankee Soxisix',
         flag: false,
         description: '',
     },
     {
-        name: '飛行機隊改良1',
+        name: 'India X-Ray',
         flag: false,
         description: '',
     },
     {
-        name: '射撃システム改良0',
+        name: 'Juliet Whiskey Unaone',
         flag: false,
         description: '',
     },
     {
-        name: '応急工作班改良1',
+        name: '	Victor Lima',
         flag: false,
         description: '',
     },
     {
-        name: '着弾観測機改良1',
+        name: 'Sierra Mike',
         flag: false,
         description: '',
     },
