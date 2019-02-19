@@ -6,6 +6,7 @@
   />
   <w-detail-page 
     :shipData="shipData"
+    :ugData="ugData"
   />
 </div>
 </template>
@@ -13,7 +14,10 @@
 <script lang="ts">
 import { Vue, Component, Prop, Watch } from 'vue-property-decorator';
 import ShipType from '@/models/ShipType';
+import SkillUgType from '@/models/SkillUgType';
 import shipDatas from '@/datas/shipDatas';
+import ugDatas from '@/datas/ugData';
+import skillDatas from '@/datas/skillData';
 import WDetailPage from '@/components/WDetailPage.vue';
 import WTopBar from '@/components/WTopBar.vue';
 
@@ -24,14 +28,15 @@ import WTopBar from '@/components/WTopBar.vue';
   },
 })
 export default class DetailPage extends Vue {
+  private shipData: ShipType | null = null;
+  private ugData: SkillUgType[] = ugDatas;
+  private skillData: SkillUgType[] = skillDatas;
   @Prop()
   private name!: string;
 
-  private shipData: ShipType | null = null;
-
   public created() {
     this.shipData = shipDatas.filter((ship) => {
-      return ship.name === this.name ;
+      return ship.name === this.name;
     })[0];
   }
 }

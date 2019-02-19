@@ -4,12 +4,14 @@
     <div class="modal">
       <swiper ref="swiper" @slideChangeTransitionEnd="updateSkillAndUg" :options="swiperOption">
         <swiper-slide v-for="(test, index) in testDatas" :key="index">
-          <div class="content" style="padding-bottom: 1.5em;">{{test}}
+          <div class="content" style="padding-bottom: 1.5em;">
             <div v-if="index==0">
               <w-select-skill-modal-swiper/>
             </div>
             <div v-if="index==1">
-              <w-select-ug-modal-swiper/>
+              <w-select-ug-modal-swiper
+                :ugData="ugData"
+              />
             </div>
           </div>
         </swiper-slide>
@@ -26,6 +28,7 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper';
 
 import WSelectSkillModalSwiper from '@/components/WSelectSkillModalSwiper.vue';
 import WSelectUgModalSwiper from '@/components/WSelectUgModalSwiper.vue';
+import SkillUgType from '@/models/SkillUgType';
 
 @Component({
   components: {
@@ -48,13 +51,16 @@ export default class WSelectSkillAndUgModal extends Vue {
     },
   };
 
+  @Prop()
+  private ugData!: SkillUgType[];
+
   get swiper() {
     // @ts-ignore
     return this.$refs.swiper.swiper;
   }
 
   public updateSkillAndUg(item: any) {
-    console.log('updateSkillAndUg');
+    // console.log('updateSkillAndUg');
   }
 }
 </script>
