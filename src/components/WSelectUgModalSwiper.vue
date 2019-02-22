@@ -1,7 +1,7 @@
 <template>
   <div class="w-select-ug-modal-swiper">
-    <p>{{ugData}}</p>
-    <div v-for="(ug, index) of ugData" :key="index" @click="setUg(ug)">
+    <p>{{ugDataA}}</p>
+    <div v-for="(ug, index) of ugDataA" :key="index" @click="setUg(ug)">
       {{ug.name}}
     </div>
   </div>
@@ -17,7 +17,7 @@ import SkillUgType from '@/models/SkillUgType';
 })
 export default class WSelectUgModalSwiper extends Vue {
   @Prop()
-  private ugData!: SkillUgType[];
+  private ugDataA!: SkillUgType[];
 
   public setUg(ug: SkillUgType) {
     ug.flag = !ug.flag;

@@ -1,6 +1,6 @@
 import SkillUgType from '@/models/SkillUgType';
 
-const ugDatas: SkillUgType[] = [
+const ugDataA: SkillUgType[] = [
     {
         name: '主兵装改良1',
         flag: false,
@@ -45,4 +45,4 @@ const ugDatas: SkillUgType[] = [
     },
 ];
 
-export default ugDatas;
+export default ugDataA;

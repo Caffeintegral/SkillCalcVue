@@ -18,7 +18,7 @@ import { Vue, Component, Prop, Watch } from 'vue-property-decorator';
 import ShipType from '@/models/ShipType';
 import SkillUgType from '@/models/SkillUgType';
 import shipDatas from '@/datas/shipDatas';
-import ugDatas from '@/datas/ugData';
+import ugDatas from '@/datas/ugDatas';
 import skillDatas from '@/datas/skillData';
 import flagDatas from '@/datas/flagDatas';
 import WDetailPage from '@/components/WDetailPage.vue';

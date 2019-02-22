@@ -6,10 +6,10 @@
       :skillData="skillData"
       :flagData="flagData"
     />
-    <!-- <w-select-ug
+    <w-select-ug
       :shipData="shipData"
       :ugData="ugData"
-    /> -->
+    />
     <!-- <div>{{shipData}}</div> -->
     <!-- <div>{{skillData}}</div> -->
   </div>
@@ -18,10 +18,9 @@
 <script lang="ts">
 import { Vue, Component, Prop, Watch } from 'vue-property-decorator';
 import WSelectSkillAndUg from '@/components/WSelectSkillAndUg.vue';
-import WSelectUg from '/@components/WSelectUg.vue';
+import WSelectUg from '@/components/WSelectUg.vue';
 import ShipType from '@/models/ShipType';
 import SkillUgType from '@/models/SkillUgType';
-import ugDatas from '@/datas/ugData';
 import SkillPage from '@/views/SkillPage.vue';
 
 @Component({

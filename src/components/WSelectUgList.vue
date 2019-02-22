@@ -1,5 +1,5 @@
 <template>
-  <div class="w-select-ug">
+  <div class="w-select-ug-list">
     <div @click="isModalOpened = true">
       <p>UG選択</p>
     </div>
@@ -15,7 +15,6 @@
 <script lang="ts">
 import { Vue, Component, Prop, Watch } from 'vue-property-decorator';
 import WSelectUgModal from '@/components/WSelectUgModal.vue';
-import WSelectUglist from '@/components/WSelectUglist.vue';
 import SkillUgType from '@/models/SkillUgType';
 
 @Component({
@@ -23,7 +22,7 @@ import SkillUgType from '@/models/SkillUgType';
     WSelectUgModal,
   },
 })
-export default class WSelectUg extends Vue {
+export default class WSelectUgList extends Vue {
   private isModalOpened: boolean = false;
   @Prop()
   private ugData!: SkillUgType[];
@@ -31,7 +30,7 @@ export default class WSelectUg extends Vue {
 
 </script>
 <style lang="scss" scoped>
-  .w-select-ug {
+  .w-select-ug-list {
     width: 100%;
     height: 100%;
   }
